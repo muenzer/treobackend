@@ -1,0 +1,17 @@
+{
+  "name": "troe-serverless",
+  "custom": {
+  	"cors": {
+    "allowOrigin": "*",
+    "allowHeaders": ["Content-Type", "X-Amz-Date", "Authorization", "X-Api-Key"]
+  	},
+    "client": {
+        "bucketName": "backend.designedbytro.com"
+    }
+  },
+  "plugins": [
+  "serverless-cors-plugin",
+  "serverless-optimizer-plugin",
+  "serverless-client-s3"
+  ]
+}

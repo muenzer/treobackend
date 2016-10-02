@@ -1,0 +1,43 @@
+{
+    "Records": [
+        {
+            "eventID": "e0633e13640621fa99e23e19a1239351",
+            "eventName": "INSERT",
+            "eventVersion": "1.1",
+            "eventSource": "aws:dynamodb",
+            "awsRegion": "eu-central-1",
+            "dynamodb": {
+                "ApproximateCreationDateTime": 1474111500,
+                "Keys": {
+                    "CreatedAt": {
+                        "N": "1474111521716"
+                    },
+                    "id": {
+                        "S": "H15m_oqh"
+                    }
+                },
+                "NewImage": {
+                    "CreatedAt": {
+                        "N": "1474111521716"
+                    },
+                    "name": {
+                        "S": "Chris Muenzer"
+                    },
+                    "emailaddress": {
+                        "S": "chris.muenzer.cm1@roche.com"
+                    },
+                    "id": {
+                        "S": "H15m_oqh"
+                    },
+                    "message": {
+                        "S": "Hi, how are you doing?\n\nI would like to take a class!"
+                    }
+                },
+                "SequenceNumber": "420400000000000215187035",
+                "SizeBytes": 170,
+                "StreamViewType": "NEW_IMAGE"
+            },
+            "eventSourceARN": "arn:aws:dynamodb:eu-central-1:241696098461:table/contact-dev/stream/2016-09-17T11:07:51.037"
+        }
+    ]
+}

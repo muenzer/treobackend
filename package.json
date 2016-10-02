@@ -1,0 +1,22 @@
+{
+  "name": "troe-serverless",
+  "version": "0.0.1",
+  "description": "A Serverless Project and its Serverless Plugin dependencies.",
+  "author": "me",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/"
+  },
+  "dependencies": {
+    "dateformat": "^1.0.12",
+    "mailin-api-node-js": "^1.0.0",
+    "serverless-client-s3": "^2.0.0",
+    "serverless-cors-plugin": "^0.4.1",
+    "serverless-optimizer-plugin": "^2.5.1"
+  },
+  "devDependencies": {
+    "shortid": "^2.2.6"
+  }
+}

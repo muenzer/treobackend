@@ -1,0 +1,290 @@
+{
+    "Records": [
+        {
+            "eventID": "8f9e0a7329dc4103294b09a9e17498f5",
+            "eventName": "MODIFY",
+            "eventVersion": "1.1",
+            "eventSource": "aws:dynamodb",
+            "awsRegion": "eu-central-1",
+            "dynamodb": {
+                "ApproximateCreationDateTime": 1470561420,
+                "Keys": {
+                    "CourseSession": {
+                        "S": "748#992"
+                    },
+                    "EmailAddress": {
+                        "S": "chris.muenzer@gmail.com"
+                    }
+                },
+                "NewImage": {
+  "ClassName": {
+    "S": "Intro to Clay - Four Week Class"
+  },
+  "Cost": {
+    "N": "200"
+  },
+  "CourseSession": {
+    "S": "748#987"
+  },
+  "CreatedAt": {
+    "N": "1470587446098"
+  },
+  "Date": {
+    "N": "1472508000000"
+  },
+  "DueDate": {
+    "N": "1470848432719"
+  },
+  "EmailAddress": {
+    "S": "chris.muenzer@gmail.com"
+  },
+  "EmailFlag": {
+    "BOOL": true
+  },
+  "id": {
+    "S": "4adcf320-5cbc-11e6-b051-6d6d7ee11959"
+  },
+  "Message": {
+    "S": "Yay, a space has opened up and you are now registered for"
+  },
+  "Name": {
+    "S": "Test"
+  },
+  "Number": {
+    "N": "4"
+  },
+  "Payment": {
+    "N": "200"
+  },
+  "PaymentStatus": {
+    "S": "Registered"
+  },
+  "SessionName": {
+    "S": "Tuesday Mornings - 9:00am to 12:00pm - Begins August 30th"
+  },
+  "Template": {
+    "N": "2"
+  },
+  "Type": {
+    "S": "Class"
+  },
+  "UpdatedAt": {
+    "N": "1470589233688"
+  }
+},
+                "OldImage": {
+                    "EmailFlag": {
+                        "BOOL": true
+                    },
+                    "CreatedAt": {
+                        "N": "1470081100711"
+                    },
+                    "Cost": {
+                        "S": "200"
+                    },
+                    "UpdatedAt": {
+                        "N": "1470560995766"
+                    },
+                    "Date": {
+                        "N": "1472083200000"
+                    },
+                    "EmailAddress": {
+                        "S": "chris.muenzer@gmail.com"
+                    },
+                    "Name": {
+                        "S": "Test"
+                    },
+                    "Template": {
+                        "N": "6"
+                    },
+                    "CourseSession": {
+                        "S": "748#992"
+                    },
+                    "Payment": {
+                        "S": "50"
+                    },
+                    "Type": {
+                        "S": "Class"
+                    },
+                    "Number": {
+                        "S": "1"
+                    },
+                    "ClassName": {
+                        "S": "Intro to Clay - Four Week Class"
+                    },
+                    "id": {
+                        "S": "5d7e6bb6-5821-11e6-97f9-79f9ddff003b"
+                    },
+                    "DueDate": {
+                        "N": "1471651200000"
+                    },
+                    "PaymentStatus": {
+                        "S": "Overdue"
+                    }
+                },
+                "SequenceNumber": "25874600000000000211520204",
+                "SizeBytes": 591,
+                "StreamViewType": "NEW_AND_OLD_IMAGES"
+            },
+            "eventSourceARN": "arn:aws:dynamodb:eu-central-1:241696098461:table/participants-dev/stream/2016-08-07T08:55:39.580"
+        },
+        {
+            "eventID": "c1fa74525f5c52f354670ccc1c564b14",
+            "eventName": "INSERT",
+            "eventVersion": "1.1",
+            "eventSource": "aws:dynamodb",
+            "awsRegion": "eu-central-1",
+            "dynamodb": {
+                "ApproximateCreationDateTime": 1470563880,
+                "Keys": {
+                    "CourseSession": {
+                        "S": "748#987"
+                    },
+                    "EmailAddress": {
+                        "S": "chris.muenzer@gmail.com"
+                    }
+                },
+                "NewImage": {
+                    "CourseSession": {
+                        "S": "748#987"
+                    },
+                    "Type": {
+                        "S": "Class"
+                    },
+                    "Number": {
+                        "N": "1"
+                    },
+                    "CreatedAt": {
+                        "N": "1470563910966"
+                    },
+                    "ClassName": {
+                        "S": "Intro to Clay - Four Week Class"
+                    },
+                    "Date": {
+                        "N": "1472508000000"
+                    },
+                    "id": {
+                        "S": "7ed4cd60-5c85-11e6-9c8f-b536e7e2915f"
+                    },
+                    "Cost": {
+                        "N": "200"
+                    },
+                    "UpdatedAt": {
+                        "N": "1470563910966"
+                    },
+                    "EmailAddress": {
+                        "S": "chris.muenzer@gmail.com"
+                    },
+                    "SessionName": {
+                        "S": "Tuesday Mornings - 9:00am to 12:00pm - Begins August 30th"
+                    },
+                    "Name": {
+                        "S": "Test"
+                    }
+                },
+                "SequenceNumber": "25874700000000000211525932",
+                "SizeBytes": 339,
+                "StreamViewType": "NEW_AND_OLD_IMAGES"
+            },
+            "eventSourceARN": "arn:aws:dynamodb:eu-central-1:241696098461:table/participants-dev/stream/2016-08-07T08:55:39.580"
+        },
+        {
+            "eventID": "81b8a2f091e45cfd38a7a299d5253ee8",
+            "eventName": "MODIFY",
+            "eventVersion": "1.1",
+            "eventSource": "aws:dynamodb",
+            "awsRegion": "eu-central-1",
+            "dynamodb": {
+                "ApproximateCreationDateTime": 1470582360,
+                "Keys": {
+                    "CourseSession": {
+                        "S": "748#987"
+                    },
+                    "EmailAddress": {
+                        "S": "chris.muenzer@gmail.com"
+                    }
+                },
+                "NewImage": {
+                    "CourseSession": {
+                        "S": "748#987"
+                    },
+                    "Type": {
+                        "S": "Class"
+                    },
+                    "Number": {
+                        "N": "1"
+                    },
+                    "CreatedAt": {
+                        "N": "1470582372636"
+                    },
+                    "ClassName": {
+                        "S": "Intro to Clay - Four Week Class"
+                    },
+                    "id": {
+                        "S": "7ad815c0-5cb0-11e6-b281-f920d9a11e1a"
+                    },
+                    "Cost": {
+                        "N": "200"
+                    },
+                    "UpdatedAt": {
+                        "N": "1470582372636"
+                    },
+                    "Date": {
+                        "N": "1472508000000"
+                    },
+                    "EmailAddress": {
+                        "S": "chris.muenzer@gmail.com"
+                    },
+                    "SessionName": {
+                        "S": "Tuesday Mornings - 9:00am to 12:00pm - Begins August 30th"
+                    },
+                    "Name": {
+                        "S": "Test"
+                    }
+                },
+                "OldImage": {
+                    "CourseSession": {
+                        "S": "748#987"
+                    },
+                    "Type": {
+                        "S": "Class"
+                    },
+                    "Number": {
+                        "N": "2"
+                    },
+                    "CreatedAt": {
+                        "N": "1470582240323"
+                    },
+                    "ClassName": {
+                        "S": "Intro to Clay - Four Week Class"
+                    },
+                    "id": {
+                        "S": "2bfab930-5cb0-11e6-b281-f920d9a11e1a"
+                    },
+                    "Cost": {
+                        "N": "200"
+                    },
+                    "UpdatedAt": {
+                        "N": "1470582240323"
+                    },
+                    "Date": {
+                        "N": "1472508000000"
+                    },
+                    "EmailAddress": {
+                        "S": "chris.muenzer@gmail.com"
+                    },
+                    "SessionName": {
+                        "S": "Tuesday Mornings - 9:00am to 12:00pm - Begins August 30th"
+                    },
+                    "Name": {
+                        "S": "Test"
+                    }
+                },
+                "SequenceNumber": "26728500000000000198180402",
+                "SizeBytes": 623,
+                "StreamViewType": "NEW_AND_OLD_IMAGES"
+            },
+            "eventSourceARN": "arn:aws:dynamodb:eu-central-1:241696098461:table/participants-dev/stream/2016-08-07T08:55:39.580"
+        }
+    ]
+}

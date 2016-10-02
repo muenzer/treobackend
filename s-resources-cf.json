@@ -1,0 +1,111 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "The AWS CloudFormation template for this Serverless application's resources outside of Lambdas and Api Gateway",
+  "Resources": {
+    "IamRoleLambda": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": [
+                  "lambda.amazonaws.com"
+                ]
+              },
+              "Action": [
+                "sts:AssumeRole"
+              ]
+            }
+          ]
+        },
+        "Path": "/"
+      }
+    },
+    "IamPolicyLambda": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "${stage}-${project}-lambda",
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents",
+                "dynamodb:*",
+                "dynamodb:GetRecords",
+                "dynamodb:GetShardIterator",
+                "dynamodb:ListStreams",
+                "dynamodb:PutItem",
+                "dynamodb:Scan",
+                "dynamodb:Query"
+              ],
+              "Resource": [
+                "arn:aws:logs:${region}:*:*",
+                "arn:aws:dynamodb:${region}:*:*",
+                "arn:aws:ses:eu-west-1:*"
+              ]
+            }
+          ]
+        },
+        "Roles": [
+          {
+            "Ref": "IamRoleLambda"
+          }
+        ]
+      }
+    },
+    "Participants": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "TableName" : "Participants",
+        "KeySchema": [       
+          { "AttributeName": "CourseSession", "KeyType": "HASH" },
+          { "AttributeName": "EmailAddress", "KeyType": "RANGE" }  
+        ],
+        "AttributeDefinitions": [       
+          { "AttributeName": "CourseSession", "AttributeType": "S" },
+          { "AttributeName": "EmailAddress", "AttributeType": "S" },
+          { "AttributeName": "PaymentStatus", "AttributeType": "S"},
+          { "AttributeName": "DueDate", "AttributeType": "N"}
+        ],
+        "ProvisionedThroughput": {       
+          "ReadCapacityUnits": 1, 
+          "WriteCapacityUnits": 1
+        },
+        "GlobalSecondaryIndexes": [
+          {    
+            "IndexName": "PaymentStatus",
+            "KeySchema": [
+              { "AttributeName": "PaymentStatus", "KeyType": "HASH"}, 
+              { "AttributeName": "DueDate", "KeyType": "RANGE" } 
+
+            ],
+            "Projection": {
+              "ProjectionType": "ALL"
+            },
+            "ProvisionedThroughput": {
+              "ReadCapacityUnits": 1,"WriteCapacityUnits": 1
+            }
+          }
+        ]
+      }
+    }
+  },
+  "Outputs": {
+    "IamRoleArnLambda": {
+      "Description": "ARN of the lambda IAM role",
+      "Value": {
+        "Fn::GetAtt": [
+          "IamRoleLambda",
+          "Arn"
+        ]
+      }
+    }
+  }
+}

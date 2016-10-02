@@ -1,0 +1,36 @@
+{
+  "name": "contact-daemon",
+  "runtime": "nodejs4.3",
+  "description": "function to check updates to the participants database and send out emails",
+  "customName": false,
+  "customRole": false,
+  "handler": "handler.handler",
+  "timeout": 6,
+  "memorySize": 128,
+  "authorizer": {},
+  "custom": {
+    "excludePatterns": []
+  },
+  "endpoints": [],
+  "events": [
+    {
+      "name" : "contact-dev",
+      "type": "dynamodbstream",
+      "config": {
+        "streamArn": "arn:aws:dynamodb:eu-central-1:241696098461:table/contact-dev/stream/2016-09-17T11:07:51.037",
+        "startingPosition": "LATEST",
+        "batchSize": 50, 
+        "enabled": true 
+      }
+    }
+  ],
+  "environment": {
+    "SERVERLESS_PROJECT": "${project}",
+    "SERVERLESS_STAGE": "${stage}",
+    "SERVERLESS_REGION": "${region}"
+  },
+  "vpc": {
+    "securityGroupIds": [],
+    "subnetIds": []
+  }
+}

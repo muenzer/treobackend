@@ -1,0 +1,14 @@
+{
+  "name": "contact-daemon",
+  "version": "0.0.1",
+  "description": "Lamda code to read DynamoDB changes and send emails",
+  "main": "handler.js",
+  "scripts": {
+    "test": "sls function run"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mailin-api-node-js": "^1.0.0"
+  }
+}

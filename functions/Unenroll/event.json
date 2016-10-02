@@ -1,0 +1,16 @@
+{
+  "Class": "1149",
+  "ClassName": "Intro to Clay - Four Week Class",
+  "Cost": "200",
+  "Course": "748",
+  "CourseSession": "748#1149",
+  "Date": 1476748800000,
+  "DueDate": 1472860800000,
+  "EmailAddress": "chris.muenzer@gmail.com",
+  "Name": "Chris Muenzer",
+  "Number": "1",
+  "Payment": 50,
+  "PaymentStatus": "Unenrolled",
+  "Template": 2,
+  "Type": "Class"
+}
