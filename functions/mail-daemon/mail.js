@@ -14,7 +14,7 @@ module.exports.sendMailTemplate = function(data, callback) {
 		} else {
 			callback(response.code, response.message);
 		}
-		
+
 	});
 };
 
@@ -32,7 +32,7 @@ module.exports.sendMail = function(data, callback) {
 		} else {
 			callback(response.code, response.message);
 		}
-		
+
 	});
 };
 
@@ -48,7 +48,7 @@ module.exports.createMailData = function(object) {
 		number = object.Number + ' spaces';
 	}
 
-	var data = { 
+	var data = {
 		id : object.Template,
 		to : object.EmailAddress,
 		attr : {
@@ -70,25 +70,26 @@ module.exports.createRegistrationMail = function(object) {
 	var json2html = require('json-to-html');
 	var dateFormat = require('dateformat');
 
-	console.log(object);
+	console.log("Iput object", object);
 
-	var data = {	
-			Name:object.Name.S,
-			Class:object.ClassName.S,
-			Date: dateFormat(Number(object.Date.N), "mmmm dS"),
-			Number: object.Number.N | object.Number.S
-		};
+	var data = {};
+	try { data.Name = object.Name.S; } catch(e){ data.Name = "No Name"; }
+	try { data.EmailAddress = object.EmailAddress.S; } catch(e){ data.EmailAddress = "No Email"; }
+	try { data.Class = object.ClassName.S; } catch(e){ data.Class = "No Class"; }
+	try { data.Date = dateFormat(Number(object.Date.N), "mmmm dS"); } catch(e){ data.Date = 0; }
+	try { data.Session = object.SessionName.S; } catch(e){ data.Session = "No Session"; }
+	try { data.Number = object.Number.N | object.Number.S; } catch(e){ data.Number = 0; }
 
-	console.log(data);
+	console.log("Registration data", data);
 
-	var html = json2html(data);
+	var html = null;
+	try { html = json2html(data); } catch(e){ html = "Error!"; }
 
-	var input = { 
-          to : {"meghan@designedbytro.com":"Meghan Howard"},
-          from: ["meghan@designedbytro.com","Meghan Howard"],
-          subject: "New Registration: " + object.ClassName.S + " - " + dateFormat(Number(object.Date.N), "mmmm dS"),
-          html: html
-        }; 
+	var input = {};
+	input.to = {"meghan@designedbytro.com":"Meghan Howard"};
+	input.from = ["meghan@designedbytro.com","Meghan Howard"];
+	try { input.subject = "New Registration: " + object.ClassName.S + " - " + dateFormat(Number(object.Date.N), "mmmm dS"); } catch(e){ input.subject = ""; }
+	input.html = html;	
 
     return input;
 };
@@ -109,12 +110,12 @@ module.exports.createOverdueMail = function(object) {
 
 	html = html + "<div><a href='backend.designedbytro.com/#/status'>Backend</a></div>";
 
-	var input = { 
+	var input = {
           to : {"meghan@designedbytro.com":"Meghan Howard"},
           from: ["meghan@designedbytro.com","Meghan Howard"],
           subject: "Overdue Payments: " + dateFormat(Date.now(), "mmmm dS"),
           html: html
-        }; 
+        };
 
     return input;
 };

@@ -20,6 +20,14 @@ module.exports.handler = function(event, context, cb) {
 			break;
 			case "MODIFY":
 				if(typeof(record.dynamodb.NewImage.EmailFlag) != 'undefined' && record.dynamodb.NewImage.EmailFlag.BOOL) {
+
+					var number = newImage.Number.N | newImage.Number.S;
+					if(number == 1) {
+						number = 'one space';
+					} else {
+						number = number + ' spaces';
+					}
+
 					emailData = {
 						to: newImage.EmailAddress.S,
 						id: newImage.Template.N,
